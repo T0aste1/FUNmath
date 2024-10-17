@@ -1,16 +1,16 @@
-(<html><head><base target="_blank"></head><body><button class="c-button">PLAY FULLSCREEN</button>
+<html><head><base target="_blank"></head><body><div id="fr" data="<iframe width=&quot;100%&quot; height=&quot;100%&quot; src=&quot;https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://124009964-867459681590430730.preview.editmysite.com/uploads/b/150529967-915366498889740153/files/fh.xml&amp;container=ig&quot; frameborder=&quot;0&quot; allowfullscreen></iframe>"><iframe width="100%" height="100%" src="https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://124009964-867459681590430730.preview.editmysite.com/uploads/b/150529967-915366498889740153/files/fh.xml&amp;container=ig" frameborder="0" allowfullscreen=""></iframe></div><button class="c-button" type="button" onclick="PlayTo(this)" style="display: none;">Play on Classroom 6X</button>
 <style>
 .c-button {
   min-width: 100%;
   font-family: fantasy;
-  appearance: none;
+  appearance: auto;
   border: 0;
-border-color: #fff;
+  border-color: #fff;
   border-radius: 5px;
   background: #274e13;
   color: #fff;
-  padding: 0px 46px;
-  font-size: 20px;
+
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -33,38 +33,9 @@ border-color: #fff;
 </style>
 
 <script>
-        var urlObj = new window.URL(window.location.href);
-        var url = "https://52vM53FEItliDr4wDPAG1fpY-opensocial.googleusercontent.com/gadgets/ifr?url=https://470137485-731408594630715268.preview.editmysite.com/uploads/b/139890129-886482068636258287/files/eg2.xml&container=ig";
-
-        if (url) {
-            var win;
-
-            document.querySelector('button').onclick = function() {
-                if (win) {
-                    win.focus();
-                } else {
-                    win = window.open();
-                    win.document.body.style.margin = '0';
-                    win.document.body.style.height = '100vh';
-                    var iframe = win.document.createElement('iframe');
-                    iframe.style.border = 'none';
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    iframe.style.margin = '0';
-                    iframe.src = url;
-                    win.document.body.appendChild(iframe);
-                    
-
-                    var interval = setInterval(function() {
-                        if (win.closed) {
-                            clearInterval(interval);
-                            win = undefined;
-
-                        }
-                    }, 500);
-
-
-                }
-            };
-        }
-    </script></body></html>)
+function PlayTo(sel){
+  var div = sel.previousSibling;
+  div.innerHTML=div.getAttribute('data');
+  sel.style.display = "none";
+}
+</script></body></html>
